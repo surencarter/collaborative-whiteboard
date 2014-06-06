@@ -1,0 +1,71 @@
+<html>
+<head>
+   <script type="text/javascript" src="libraries/jCanvaScript.js"></script>
+   <script type="text/javascript" src="libraries/jscolor/jscolor.js"></script>
+   <script type="text/javascript" src="clientApplication.js"></script>
+   <title>Collaborative Whiteboard</title>
+<head>
+<body onload=init()>
+
+<canvas id="canvas" width="1024px" height="600px" style="border:solid; display:block; margin:auto;"></canvas>
+
+<form method="link" ACTION="index.php" style="float:right;">
+	<input type="submit" value="Whiteboards">
+</form>
+<div style="width:100%; text-align:center;">
+   <button id="brushBtn">Brush</button>
+   <button id="lineBtn">Line</button>
+   <button id="rectBtn">Rectangle</button>
+   <button id="circleBtn">Circle</button>
+   <button id="polyBtn">Polygon</button>
+   <button id="textBtn">Text</button>
+   <button id="imageBtn">Image</button>
+   <button id="eraseBtn">Eraser</button>
+   <button id="selectBtn">Select</button>
+</div>
+
+<div style="width:100%; text-align:center;">
+   Color: <input id="colorInput" class="color" style="width:60px;"/>
+   Opacity: <input id="opacSlide" type="range" min="0" max="100" value="100"/>
+   Composite: <select id="compSel">
+      <option value="source-over">none</option>
+      <option value="destination-over">draw under</option>
+      <option value="destination-in">crop</option>
+      <option value="copy">hide everything</option>
+      <option value="destination-out">NOT</option>
+      <option value="source-atop">AND</option>
+      <option value="xor">XOR</option>
+      <option value="lighter">dodge</option>
+      <option value="darker">burn</option>
+   </select>
+</div>
+
+<div style="width:100%; text-align:center;">
+   <span id="fillFld" style="display:none;">
+      Fill: <input id="fillCheck" type="checkbox"/>
+   </span>
+   <span id="brushFld" style="display:none;">
+      Brush size: <input id="brushSlide" type="range" min="1" max="70" value="10"/>
+   </span>
+   <span id="lnWidthFld" style="display:none;">
+      Line width: <input id="lnWidthSlide" type="range" min="1" max="35" value="1"/>
+   </span>
+   <span id="textFld" style="display:none;">
+      Line width: <input id="txtLnWidth" type="range" min="1" max="7" value="1"/>
+      Font:
+      <select id="fontSel">
+         <option value="serif">Serif</option>
+         <option value="sans-serif">Sans-Serif</option>
+         <option value="monospace">Monospace</option>
+         <option value="cursive">Cursive</option>
+         <option value="fantasy">Fantasy</option>
+      </select>
+      Text: <input id="textInput" type="text" value="Your text here"/>
+   </span>
+   <span id="imageFld" style="display:none;">
+         Image URL: <input id="fileUrlInput" type="text" value="Paste image URL here"/>
+   </span>
+</div>
+
+</body>
+</html>
